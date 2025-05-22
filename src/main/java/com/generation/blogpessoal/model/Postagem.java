@@ -42,6 +42,10 @@ public class Postagem
 	@ManyToOne // lado N da relaçao
 	@JsonIgnoreProperties("postagem") // pra ignorar o loop do insomnia
 	private Tema tema;
+	
+	@ManyToOne 
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -82,6 +86,13 @@ public class Postagem
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
-	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 }
